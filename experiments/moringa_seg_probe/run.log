@@ -1,0 +1,37 @@
+{
+  "scope": "experimento exploratorio; no es evaluacion formal ni parte del producto",
+  "video_sha256": "63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083",
+  "weights_sha256": "4996a2c1da799d2a383dd71fc3ce6bb2c3eadee9ed1b17c4f3c64d122606d5f1",
+  "weights_path": ".context/Moringa_Train_Annotations/Train/weights/best.pt",
+  "inference": {
+    "imgsz": 640,
+    "conf": 0.25,
+    "device": "cuda:0"
+  },
+  "versions": {
+    "ultralytics": "8.4.189",
+    "torch": "2.14.1+cu130",
+    "opencv": "5.0.0",
+    "python": "3.12.14"
+  },
+  "frames": 972,
+  "detections_total": 6454,
+  "frames_with_detection": 972,
+  "detections_per_frame": {
+    "mean": 6.639917695473251,
+    "median": 7.0,
+    "max": 12,
+    "p95": 9.0
+  },
+  "confidence": {
+    "median": 0.8618,
+    "p10": 0.53472
+  }
+}
+{
+  "located_proxy_points": 9,
+  "point_inside_mask": 9,
+  "mask_within_uncertainty": 9,
+  "hidden_base_rows": 20,
+  "hidden_rows_with_detection_on_line": 20
+}

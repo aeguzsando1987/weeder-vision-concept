@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "precision-weeder"
+version = "0.1.0"
+description = "Banco offline de desmalezado intrafilar de precision: contratos, escenas sinteticas y geometria de herramienta."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [{ name = "Equipo prototipo desmalezadora" }]
+keywords = ["agriculture", "geometry", "simulation", "offline"]
+
+dependencies = [
+  "numpy>=1.26",
+  "shapely>=2.0",
+  "scipy>=1.11",
+  "pyyaml>=6.0",
+  "pydantic>=2.6",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+# Decodificacion de video (E0+): PyAV expone PTS/time_base y empaqueta FFmpeg;
+# OpenCV headless (un unico paquete OpenCV, §4) para flujo optico y muestras.
+video = [
+  "av>=14.0",
+  "opencv-python-headless>=4.10",
+]
+dev = [
+  "precision-weeder[video]",
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/precision_weeder"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["error::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+# Evidencia de revision preservada sin modificar (historial del revisor). Sus pruebas
+# se integran, adaptadas y con lint, en tests/review/. Politica: docs/reviews/E1.md.
+extend-exclude = ["docs/reviews/evidence"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011"]

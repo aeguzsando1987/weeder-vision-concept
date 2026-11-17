@@ -1,0 +1,8 @@
+# Caso adverso: dimension no positiva.
+schema_version: 1
+mode: synthetic
+scene:
+  scene_id: negative_dimension
+  corridor:
+    width_m: -1.0
+    length_m: 5.0

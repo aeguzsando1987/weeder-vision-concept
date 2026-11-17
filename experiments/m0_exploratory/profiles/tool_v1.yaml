@@ -1,0 +1,17 @@
+# Herramienta SUPUESTA del perfil V1 (orden V1; decision del usuario del 16-11-2026).
+# Mas pequena que la cuchilla sintetica de E1 (0.20 x 0.08 m): con la escala supuesta del
+# clip, aquella solo cabe sobre la hilera en ~29% de los gaps (diagnose_route.py).
+# No es diseno mecanico ni dimension medida.
+schema_version: 1
+provenance: assumed
+
+tool:
+  tool_id: blade_rect_100x40
+  domain: ground_metric_synthetic
+  shape: rectangle
+  length_x_m: 0.10          # lateral
+  width_y_m: 0.04           # longitudinal
+  pivot_offset_m: [0.0, 0.0]
+  orientation_mode: fixed
+  cutting_inset_m: 0.005
+  depth_z_m: null

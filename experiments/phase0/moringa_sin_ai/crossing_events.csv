@@ -1,0 +1,4 @@
+plant_id,observed_target,crossing_time_s,frame_before,frame_after,support_from_s,support_to_s,time_uncertainty_s,status
+P01,stem_axis_proxy,13.55098005882353,406,412,13.533333,13.733333,0.01764705882352935,crossed
+P02,stem_axis_proxy,11.749275695652173,347,353,11.566667,11.766667,0.016304347826086897,crossed
+P03,stem_axis_proxy,29.47610756647399,883,889,29.433333,29.633333,0.017341040462427685,crossed

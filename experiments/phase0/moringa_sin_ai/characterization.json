@@ -1,0 +1,749 @@
+{
+  "results": {
+    "backend": {
+      "libavcodec": "63.1.102",
+      "libavdevice": "63.1.102",
+      "libavfilter": "12.1.102",
+      "libavformat": "63.1.102",
+      "libavutil": "61.1.102",
+      "libswresample": "7.1.102",
+      "libswscale": "10.1.102",
+      "opencv": "5.0.0",
+      "pyav": "19.0.2"
+    },
+    "config": {
+      "expected_sha256": "63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083",
+      "flow": {
+        "direction_dominance": 0.7,
+        "example_count": 6,
+        "fb_max_error_px": 1.0,
+        "frame_step": 1,
+        "max_corners": 400,
+        "method": "lk_pyramidal_fb",
+        "min_distance_px": 7.0,
+        "min_motion_px": 0.5,
+        "min_valid_points": 20,
+        "pyramid_levels": 3,
+        "quality_level": 0.01,
+        "window_px": 21
+      },
+      "manifest_path": "data/video_manifest.csv",
+      "output_dir": "experiments/phase0",
+      "roi": {
+        "rationale": "Suelo en todo el encuadre; se excluye el 3 % inferior porque en algunos cuadros aparece en el borde una franja oscura de pocos pixeles (u~900-1030) no identificada que podria ser sombra o parte del vehiculo y sesgaria el flujo hacia cero.",
+        "u_max": 1.0,
+        "u_min": 0.0,
+        "v_max": 0.97,
+        "v_min": 0.0
+      },
+      "sampling": {
+        "analysis_scale": 0.25,
+        "jpeg_quality": 92,
+        "min_separation_frames": 15,
+        "problem_count_per_metric": 2,
+        "uniform_count": 12
+      },
+      "source": "resources/moringa_sin_ai.mp4",
+      "timestamps": {
+        "allow_index_fps_estimate": true,
+        "annotation_tolerance_s": 1e-06,
+        "content_repeat_ratio": 0.1,
+        "gap_factor": 1.5,
+        "preferred_source": "pts"
+      }
+    },
+    "config_hash": "b4d36ffc868ad52627415d381d52984fe8d74aecc235081576c0637dbee7da6e",
+    "content_repeat_note": "1 cuadro(s) candidatos a imagen casi repetida respecto del anterior, con PTS regular. Es compatible con una repeticion introducida al codificar a frecuencia constante, pero no se certifica como duplicado de captura ni se infiere perdida de cuadros. Metadatos declarados por el contenedor (indicios de procesamiento, no prueba de la cadena de adquisicion): {'te_is_reencode': '1', 'encoder': 'Lavf61.1.100'}.",
+    "content_repeats": [
+      {
+        "after_index": 1,
+        "at_s": 0.06666666666666667,
+        "before_index": 2,
+        "interval_s": null,
+        "kind": "content_repeat_candidate",
+        "mean_abs_diff": 0.36954474449157715,
+        "threshold": 1.6818626403808594
+      }
+    ],
+    "decode": {
+      "eof_status": "eof_reached",
+      "error": null,
+      "frames_decoded": 972,
+      "frames_without_pts": 0,
+      "limitation": "FFmpeg/PyAV no garantiza distinguir un archivo truncado de uno completo; el truncamiento solo se declara ante errores o advertencias explicitas.",
+      "observed_sizes": [
+        [
+          1920,
+          1080
+        ]
+      ],
+      "truncation_suspected": false,
+      "warning_count": 0,
+      "warnings": []
+    },
+    "flow_examples": [
+      {
+        "affine_fit": {
+          "center_u_px": 844.3248730964467,
+          "center_v_px": 533.2182741116751,
+          "du_offset_px": 4.929971428692037,
+          "du_per_u_px_per_px": -0.0017820916546548284,
+          "du_per_v_px_per_px": -0.001301783277805424,
+          "du_residual_mad_px": 0.26432671383097994,
+          "dv_offset_px": -26.18394954313482,
+          "dv_per_u_px_per_px": 0.0009689004012403521,
+          "dv_per_v_px_per_px": -0.005031256910435619,
+          "dv_residual_mad_px": 0.2730371331966488,
+          "points": 394
+        },
+        "detected": 400,
+        "direction": "up",
+        "dt_s": null,
+        "fraction_down": 0.0,
+        "fraction_left": 0.0025380710659898475,
+        "fraction_right": 0.9974619289340102,
+        "fraction_up": 1.0,
+        "image": "experiments/phase0/moringa_sin_ai/flow_examples/flow_000000_000001.jpg",
+        "index_from": 0,
+        "index_to": 1,
+        "mad_du_px": 0.557373046875,
+        "mad_dv_px": 1.3009033203125,
+        "median_du_px": 5.361572265625,
+        "median_dv_px": -26.163284301757812,
+        "median_magnitude_px": 26.70458524432555,
+        "rejected": 0,
+        "valid": 400,
+        "valid_soil": 394,
+        "valid_vegetation": 6,
+        "vegetation_median_du_px": 5.8264312744140625,
+        "vegetation_median_dv_px": -31.60455322265625
+      },
+      {
+        "affine_fit": {
+          "center_u_px": 823.6288659793814,
+          "center_v_px": 429.1855670103093,
+          "du_offset_px": 0.5674784109764492,
+          "du_per_u_px_per_px": -0.004317792877699875,
+          "du_per_v_px_per_px": 0.001018760836406092,
+          "du_residual_mad_px": 0.39355941129322053,
+          "dv_offset_px": -25.196555349015696,
+          "dv_per_u_px_per_px": -0.003072251287568638,
+          "dv_per_v_px_per_px": -0.006993318609439157,
+          "dv_residual_mad_px": 0.5430886662363434,
+          "points": 388
+        },
+        "detected": 400,
+        "direction": "up",
+        "dt_s": null,
+        "fraction_down": 0.0,
+        "fraction_left": 0.5051546391752577,
+        "fraction_right": 0.4948453608247423,
+        "fraction_up": 1.0,
+        "image": "experiments/phase0/moringa_sin_ai/flow_examples/flow_000194_000195.jpg",
+        "index_from": 194,
+        "index_to": 195,
+        "mad_du_px": 1.993255615234375,
+        "mad_dv_px": 1.6110076904296875,
+        "median_du_px": -0.069976806640625,
+        "median_dv_px": -25.028564453125,
+        "median_magnitude_px": 25.167357568309612,
+        "rejected": 0,
+        "valid": 400,
+        "valid_soil": 388,
+        "valid_vegetation": 12,
+        "vegetation_median_du_px": 1.42791748046875,
+        "vegetation_median_dv_px": -26.3011474609375
+      },
+      {
+        "affine_fit": {
+          "center_u_px": 878.9513513513514,
+          "center_v_px": 495.7189189189189,
+          "du_offset_px": -0.2798156841381177,
+          "du_per_u_px_per_px": -0.004736463370678806,
+          "du_per_v_px_per_px": 0.0024919795391777477,
+          "du_residual_mad_px": 0.13888296232561304,
+          "dv_offset_px": -25.17044638556404,
+          "dv_per_u_px_per_px": -0.003982839033447845,
+          "dv_per_v_px_per_px": -0.007368859565020299,
+          "dv_residual_mad_px": 0.46742812347327956,
+          "points": 370
+        },
+        "detected": 400,
+        "direction": "up",
+        "dt_s": null,
+        "fraction_down": 0.0,
+        "fraction_left": 0.5324324324324324,
+        "fraction_right": 0.46756756756756757,
+        "fraction_up": 1.0,
+        "image": "experiments/phase0/moringa_sin_ai/flow_examples/flow_000388_000389.jpg",
+        "index_from": 388,
+        "index_to": 389,
+        "mad_du_px": 1.7227783203125,
+        "mad_dv_px": 2.4018592834472656,
+        "median_du_px": -0.332061767578125,
+        "median_dv_px": -24.853343963623047,
+        "median_magnitude_px": 25.019776919816984,
+        "rejected": 6,
+        "valid": 394,
+        "valid_soil": 370,
+        "valid_vegetation": 24,
+        "vegetation_median_du_px": 0.3997802734375,
+        "vegetation_median_dv_px": -27.749359130859375
+      },
+      {
+        "affine_fit": {
+          "center_u_px": 850.6914893617021,
+          "center_v_px": 410.43617021276594,
+          "du_offset_px": 0.8414260275820468,
+          "du_per_u_px_per_px": -0.0035368383900701906,
+          "du_per_v_px_per_px": 0.0022084760241684234,
+          "du_residual_mad_px": 0.32755701616788196,
+          "dv_offset_px": -25.378102343133154,
+          "dv_per_u_px_per_px": -0.003559210375844681,
+          "dv_per_v_px_per_px": -0.007041808991696877,
+          "dv_residual_mad_px": 1.0391558663349993,
+          "points": 376
+        },
+        "detected": 400,
+        "direction": "up",
+        "dt_s": null,
+        "fraction_down": 0.0,
+        "fraction_left": 0.3962765957446808,
+        "fraction_right": 0.6037234042553191,
+        "fraction_up": 1.0,
+        "image": "experiments/phase0/moringa_sin_ai/flow_examples/flow_000582_000583.jpg",
+        "index_from": 582,
+        "index_to": 583,
+        "mad_du_px": 1.6346588134765625,
+        "mad_dv_px": 2.785125732421875,
+        "median_du_px": 1.2991180419921875,
+        "median_dv_px": -25.3126220703125,
+        "median_magnitude_px": 25.4484081621753,
+        "rejected": 0,
+        "valid": 400,
+        "valid_soil": 376,
+        "valid_vegetation": 24,
+        "vegetation_median_du_px": 1.269287109375,
+        "vegetation_median_dv_px": -30.01995849609375
+      },
+      {
+        "affine_fit": {
+          "center_u_px": 893.7828571428571,
+          "center_v_px": 462.16,
+          "du_offset_px": -0.7866710335867743,
+          "du_per_u_px_per_px": -0.0015857724856118984,
+          "du_per_v_px_per_px": 0.00267187913579917,
+          "du_residual_mad_px": 0.2076539815269004,
+          "dv_offset_px": -26.628708866664343,
+          "dv_per_u_px_per_px": -0.004978925937857807,
+          "dv_per_v_px_per_px": -0.004514699120222622,
+          "dv_residual_mad_px": 0.662240969195425,
+          "points": 350
+        },
+        "detected": 400,
+        "direction": "up",
+        "dt_s": null,
+        "fraction_down": 0.0,
+        "fraction_left": 0.7857142857142857,
+        "fraction_right": 0.21428571428571427,
+        "fraction_up": 1.0,
+        "image": "experiments/phase0/moringa_sin_ai/flow_examples/flow_000776_000777.jpg",
+        "index_from": 776,
+        "index_to": 777,
+        "mad_du_px": 0.708587646484375,
+        "mad_dv_px": 1.7424392700195312,
+        "median_du_px": -0.9502105712890625,
+        "median_dv_px": -26.52178955078125,
+        "median_magnitude_px": 26.556029822095425,
+        "rejected": 2,
+        "valid": 398,
+        "valid_soil": 350,
+        "valid_vegetation": 48,
+        "vegetation_median_du_px": -1.094818115234375,
+        "vegetation_median_dv_px": -31.080123901367188
+      },
+      {
+        "affine_fit": {
+          "center_u_px": 820.6321243523316,
+          "center_v_px": 464.03108808290153,
+          "du_offset_px": 0.8574639256136404,
+          "du_per_u_px_per_px": -0.0034591779391186855,
+          "du_per_v_px_per_px": 0.0026177344784425022,
+          "du_residual_mad_px": 0.1999073156046577,
+          "dv_offset_px": -25.462834565750676,
+          "dv_per_u_px_per_px": -0.0036807761836112735,
+          "dv_per_v_px_per_px": -0.006135575175272131,
+          "dv_residual_mad_px": 0.77832844492786,
+          "points": 386
+        },
+        "detected": 400,
+        "direction": "up",
+        "dt_s": null,
+        "fraction_down": 0.0,
+        "fraction_left": 0.3626943005181347,
+        "fraction_right": 0.6373056994818653,
+        "fraction_up": 1.0,
+        "image": "experiments/phase0/moringa_sin_ai/flow_examples/flow_000970_000971.jpg",
+        "index_from": 970,
+        "index_to": 971,
+        "mad_du_px": 1.4427490234375,
+        "mad_dv_px": 2.0732421875,
+        "median_du_px": 0.69647216796875,
+        "median_dv_px": -25.464065551757812,
+        "median_magnitude_px": 25.527951845669506,
+        "rejected": 0,
+        "valid": 400,
+        "valid_soil": 386,
+        "valid_vegetation": 14,
+        "vegetation_median_du_px": 2.066497802734375,
+        "vegetation_median_dv_px": -28.29656982421875
+      }
+    ],
+    "flow_summary": {
+      "analysis_scale": 0.25,
+      "direction_counts": {
+        "none": 1,
+        "up": 970
+      },
+      "dominance_rule": "una etiqueta es dominante si >= 0.7 de los pares la presentan; en otro caso 'mixed'",
+      "dominant_direction": "up",
+      "frame_step": 1,
+      "jitter_du_px": 1.510678670095471,
+      "jitter_dv_px": 0.956249650844036,
+      "jitter_method": "desviacion tipica de la serie menos su mediana movil de 15 pares; indicador de vibracion/irregularidad, no medicion de vibracion",
+      "median_du_px": 1.57177734375,
+      "median_dv_px": -25.64581298828125,
+      "median_rejected": 1.0,
+      "median_valid_soil": 375.0,
+      "median_valid_vegetation": 23.0,
+      "p05_du_px": -1.31500244140625,
+      "p05_dv_px": -26.895721435546875,
+      "p95_du_px": 4.421413421630859,
+      "p95_dv_px": -24.18494415283203,
+      "pairs": 971,
+      "pairs_with_estimate": 971,
+      "std_du_px": 1.7103080099594228,
+      "std_dv_px": 1.1543521725797672,
+      "units": "pixeles del cuadro original por paso de frame_step",
+      "vectors_source": "solo suelo (mascara ExG excluye vegetacion)"
+    },
+    "image_axes": "u hacia la derecha, v hacia abajo, pixeles del cuadro decodificado",
+    "manifest_record": {
+      "apparent_motion": "up",
+      "codec": "h264",
+      "config_hash": "b4d36ffc868ad52627415d381d52984fe8d74aecc235081576c0637dbee7da6e",
+      "container": "mov,mp4,m4a,3gp,3g2,mj2",
+      "decoder_version": "pyav 19.0.2; libavcodec 63.1.102; libavformat 63.1.102",
+      "duration_observed_s": 32.4,
+      "duration_reported_s": 32.4,
+      "evidence_ref": "experiments/phase0/moringa_sin_ai/characterization.json;experiments/phase0/moringa_sin_ai/manual_assessment.yaml",
+      "fps_effective": 30.0,
+      "fps_nominal": 30.0,
+      "frame_count_decoded": 972,
+      "frame_count_reported": 972,
+      "height_px": 1080,
+      "homography_feasibility": "possible_with_additional_data",
+      "mounting_status": "unknown",
+      "observation_timing": "unknown",
+      "relative_path": "resources/moringa_sin_ai.mp4",
+      "rotation_deg": 0.0,
+      "scale_evidence_ref": null,
+      "scale_status": "unknown",
+      "session_id": null,
+      "sha256": "63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083",
+      "site_id": null,
+      "size_bytes": 43744466,
+      "stem_base_visibility": "mostly_occluded",
+      "suitability": "B",
+      "suitability_reason": "Apto para experimentos limitados: (1) flujo aparente de suelo en pixeles (hacia arriba, ~-25.6 px/cuadro; contraste manual en 3 intervalos); (2) seguimiento de plantas como objetos (copas) y replay offline con linea virtual v=540 px (linea en pixeles: no representa cuchilla ni instante de intervencion); (3) anotacion de proxies: 3 plantas (P01-P03) con el eje del tallo visto desde arriba (stem_axis_proxy, altura desconocida) localizado en 3 cuadros cada una (+-12-20 px) y cruce interpolado de la linea virtual, con intervalo de soporte. No es A porque el contacto tallo-suelo no es identificable en ninguna de las 11 plantas inspeccionadas: puerta de datos PENDING_BASE_VISIBILITY. Escala, montaje y anticipacion siguen unknown; son restricciones independientes de esa puerta.",
+      "time_base": "1/15360",
+      "timestamp_anomalies_ref": "experiments/phase0/moringa_sin_ai/timestamp_anomalies.csv",
+      "timestamp_source": "pts",
+      "video_id": "moringa_sin_ai",
+      "width_px": 1920
+    },
+    "manual": {
+      "anticipation_validation": "not_possible",
+      "assessment_ref": "experiments/phase0/moringa_sin_ai/manual_assessment.yaml",
+      "crossing_events": [
+        {
+          "crossing_time_s": 13.55098005882353,
+          "frame_after": 412,
+          "frame_before": 406,
+          "observed_target": "stem_axis_proxy",
+          "plant_id": "P01",
+          "status": "crossed",
+          "support_from_s": 13.533333,
+          "support_to_s": 13.733333,
+          "time_uncertainty_s": 0.01764705882352935
+        },
+        {
+          "crossing_time_s": 11.749275695652173,
+          "frame_after": 353,
+          "frame_before": 347,
+          "observed_target": "stem_axis_proxy",
+          "plant_id": "P02",
+          "status": "crossed",
+          "support_from_s": 11.566667,
+          "support_to_s": 11.766667,
+          "time_uncertainty_s": 0.016304347826086897
+        },
+        {
+          "crossing_time_s": 29.47610756647399,
+          "frame_after": 889,
+          "frame_before": 883,
+          "observed_target": "stem_axis_proxy",
+          "plant_id": "P03",
+          "status": "crossed",
+          "support_from_s": 29.433333,
+          "support_to_s": 29.633333,
+          "time_uncertainty_s": 0.017341040462427685
+        }
+      ],
+      "crossing_events_scope": "cruce interpolado de puntos anotados en pixeles con la linea virtual; no es instante fisico de intervencion ni evento de base medido",
+      "crossing_line": {
+        "crossing_direction": "up",
+        "rationale": "Linea horizontal en la fila central del cuadro decodificado. El suelo se desplaza hacia arriba en imagen, de modo que cada planta la cruza una vez en sentido 'up'. Es una linea virtual offline en pixeles: no representa la posicion de la cuchilla.",
+        "u_max_px": 1920.0,
+        "u_min_px": 0.0,
+        "v_px": 540.0
+      },
+      "flow_manual_checks": [
+        {
+          "check_id": "c1_hose_right_150",
+          "difference_du_px": 0.46599999999999997,
+          "difference_dv_px": -0.5076666666666689,
+          "manual_du_per_frame_px": -0.625,
+          "manual_dv_per_frame_px": -28.166666666666668,
+          "same_vertical_sign": true,
+          "tolerance_per_frame_px": 1.6666666666666667,
+          "within_tolerance": true
+        },
+        {
+          "check_id": "c2_hose_right_388",
+          "difference_du_px": -0.040999999999999925,
+          "difference_dv_px": -0.8581666666666692,
+          "manual_du_per_frame_px": -1.25,
+          "manual_dv_per_frame_px": -27.604166666666668,
+          "same_vertical_sign": true,
+          "tolerance_per_frame_px": 0.5,
+          "within_tolerance": false
+        },
+        {
+          "check_id": "c3_hose_left_850",
+          "difference_du_px": 0.43033333333333346,
+          "difference_dv_px": -0.9619999999999997,
+          "manual_du_per_frame_px": 3.3333333333333335,
+          "manual_dv_per_frame_px": -27.25,
+          "same_vertical_sign": true,
+          "tolerance_per_frame_px": 1.0,
+          "within_tolerance": true
+        }
+      ],
+      "flow_manual_checks_scope": "same_vertical_sign solo indica coherencia de direccion; within_tolerance es el unico criterio de magnitud, con la tolerancia declarada antes de comparar",
+      "intervals": [
+        {
+          "end_frame": 9,
+          "reason": "Inicio del surco con una planta parcialmente visible en el borde inferior izquierdo del cuadro 0. \u00datil para an\u00e1lisis exploratorio del flujo aparente; no se ha acreditado en este intervalo una referencia de base de tallo ni seguimiento completo de esa planta. (Texto de la adenda editorial E0 del 25-10-2026. Antes figuraba como C: cambio de interpretacion, no de medicion.)",
+          "start_frame": 0,
+          "suitability": "B"
+        },
+        {
+          "end_frame": 971,
+          "reason": "Plantas en una o dos lineas, identificables y seguibles como objetos (copa) durante ~40 cuadros. El contacto tallo-suelo esta ocluido en las plantas inspeccionadas. Solo en algunas plantas medianas se localiza un proxy: el eje del tallo visto desde arriba, a altura desconocida (stem_axis_proxy, confianza baja/media), que no es base en el suelo.",
+          "start_frame": 10,
+          "suitability": "B"
+        }
+      ],
+      "mounting_status": "unknown",
+      "observations": 29,
+      "plants_observed": 11,
+      "replay_suitability": "B",
+      "source": "manual_visual",
+      "stem_observations_sha256": "f3a9fe64b1a0734d4cca321de8ee310e922a27be8adaa3ba81632e04ced95e3d",
+      "tracked_plants_ground_contact": {},
+      "tracked_plants_stem_axis_proxy": {
+        "P01": 3,
+        "P02": 3,
+        "P03": 3
+      },
+      "video_sha256": "63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083"
+    },
+    "probe": {
+      "bit_rate": 10796100,
+      "codec": "h264",
+      "codec_tag": "avc1",
+      "container": "mov,mp4,m4a,3gp,3g2,mj2",
+      "container_long_name": "QuickTime / MOV",
+      "container_metadata": {
+        "Hw": "1",
+        "bitrate": "12000000",
+        "compatible_brands": "isomiso2avc1mp41",
+        "creation_time": "2026-07-01T17:08:48.000000Z",
+        "encoder": "Lavf61.1.100",
+        "major_brand": "isom",
+        "maxrate": "0",
+        "minor_version": "512",
+        "te_is_reencode": "1"
+      },
+      "duration_reported_s": 32.4,
+      "fps_nominal": 30.0,
+      "fps_nominal_source": "stream.average_rate",
+      "frame_count_reported": 972,
+      "height_px": 1080,
+      "other_streams": [
+        "1:audio:aac"
+      ],
+      "path": "resources/moringa_sin_ai.mp4",
+      "pixel_format": "yuv420p",
+      "profile": "Main",
+      "rotation_deg": null,
+      "size_bytes": 43744466,
+      "start_time_s": 0.0,
+      "stream_metadata": {
+        "creation_time": "2026-07-01T17:08:48.000000Z",
+        "handler_name": "VideoHandler",
+        "language": "und"
+      },
+      "time_base": "1/15360",
+      "width_px": 1920
+    },
+    "roi_px": {
+      "u0": 0,
+      "u1": 1920,
+      "v0": 0,
+      "v1": 1048
+    },
+    "rotation": {
+      "display_rotation_applied": false,
+      "source": "frame.rotation de PyAV (matriz de visualizacion; 0 si no se declara)",
+      "value_deg": 0.0
+    },
+    "samples": [
+      {
+        "frame_index": 0,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000000.jpg",
+        "pts": 0,
+        "reasons": "uniform_00",
+        "timestamp_method": "pts",
+        "timestamp_s": 0.0
+      },
+      {
+        "frame_index": 31,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000031.jpg",
+        "pts": 15872,
+        "reasons": "brightness_jump",
+        "timestamp_method": "pts",
+        "timestamp_s": 1.0333333333333334
+      },
+      {
+        "frame_index": 56,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000056.jpg",
+        "pts": 28672,
+        "reasons": "low_vegetation",
+        "timestamp_method": "pts",
+        "timestamp_s": 1.8666666666666667
+      },
+      {
+        "frame_index": 88,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000088.jpg",
+        "pts": 45056,
+        "reasons": "uniform_01",
+        "timestamp_method": "pts",
+        "timestamp_s": 2.933333333333333
+      },
+      {
+        "frame_index": 121,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000121.jpg",
+        "pts": 61952,
+        "reasons": "flow_few_valid",
+        "timestamp_method": "pts",
+        "timestamp_s": 4.033333333333333
+      },
+      {
+        "frame_index": 177,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000177.jpg",
+        "pts": 90624,
+        "reasons": "uniform_02",
+        "timestamp_method": "pts",
+        "timestamp_s": 5.9
+      },
+      {
+        "frame_index": 209,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000209.jpg",
+        "pts": 107008,
+        "reasons": "low_vegetation",
+        "timestamp_method": "pts",
+        "timestamp_s": 6.966666666666667
+      },
+      {
+        "frame_index": 265,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000265.jpg",
+        "pts": 135680,
+        "reasons": "uniform_03",
+        "timestamp_method": "pts",
+        "timestamp_s": 8.833333333333334
+      },
+      {
+        "frame_index": 280,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000280.jpg",
+        "pts": 143360,
+        "reasons": "low_sharpness",
+        "timestamp_method": "pts",
+        "timestamp_s": 9.333333333333334
+      },
+      {
+        "frame_index": 353,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000353.jpg",
+        "pts": 180736,
+        "reasons": "uniform_04",
+        "timestamp_method": "pts",
+        "timestamp_s": 11.766666666666667
+      },
+      {
+        "frame_index": 441,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000441.jpg",
+        "pts": 225792,
+        "reasons": "uniform_05",
+        "timestamp_method": "pts",
+        "timestamp_s": 14.7
+      },
+      {
+        "frame_index": 530,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000530.jpg",
+        "pts": 271360,
+        "reasons": "uniform_06",
+        "timestamp_method": "pts",
+        "timestamp_s": 17.666666666666668
+      },
+      {
+        "frame_index": 584,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000584.jpg",
+        "pts": 299008,
+        "reasons": "low_sharpness",
+        "timestamp_method": "pts",
+        "timestamp_s": 19.466666666666665
+      },
+      {
+        "frame_index": 618,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000618.jpg",
+        "pts": 316416,
+        "reasons": "uniform_07",
+        "timestamp_method": "pts",
+        "timestamp_s": 20.6
+      },
+      {
+        "frame_index": 687,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000687.jpg",
+        "pts": 351744,
+        "reasons": "flow_dispersion",
+        "timestamp_method": "pts",
+        "timestamp_s": 22.9
+      },
+      {
+        "frame_index": 706,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000706.jpg",
+        "pts": 361472,
+        "reasons": "uniform_08",
+        "timestamp_method": "pts",
+        "timestamp_s": 23.533333333333335
+      },
+      {
+        "frame_index": 721,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000721.jpg",
+        "pts": 369152,
+        "reasons": "brightness_jump",
+        "timestamp_method": "pts",
+        "timestamp_s": 24.033333333333335
+      },
+      {
+        "frame_index": 779,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000779.jpg",
+        "pts": 398848,
+        "reasons": "high_vegetation",
+        "timestamp_method": "pts",
+        "timestamp_s": 25.966666666666665
+      },
+      {
+        "frame_index": 794,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000794.jpg",
+        "pts": 406528,
+        "reasons": "uniform_09",
+        "timestamp_method": "pts",
+        "timestamp_s": 26.466666666666665
+      },
+      {
+        "frame_index": 826,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000826.jpg",
+        "pts": 422912,
+        "reasons": "flow_dispersion",
+        "timestamp_method": "pts",
+        "timestamp_s": 27.533333333333335
+      },
+      {
+        "frame_index": 883,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000883.jpg",
+        "pts": 452096,
+        "reasons": "uniform_10",
+        "timestamp_method": "pts",
+        "timestamp_s": 29.433333333333334
+      },
+      {
+        "frame_index": 915,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000915.jpg",
+        "pts": 468480,
+        "reasons": "flow_few_valid",
+        "timestamp_method": "pts",
+        "timestamp_s": 30.5
+      },
+      {
+        "frame_index": 931,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000931.jpg",
+        "pts": 476672,
+        "reasons": "high_vegetation",
+        "timestamp_method": "pts",
+        "timestamp_s": 31.033333333333335
+      },
+      {
+        "frame_index": 971,
+        "image": "experiments/phase0/moringa_sin_ai/frames/frame_000971.jpg",
+        "pts": 497152,
+        "reasons": "uniform_11",
+        "timestamp_method": "pts",
+        "timestamp_s": 32.36666666666667
+      }
+    ],
+    "schema_version": 1,
+    "sha256": "63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083",
+    "timestamps": {
+      "anomalies": [],
+      "duplicates": 0,
+      "duration_observed_method": "(pts) t_last - t_first + mediana del intervalo",
+      "duration_observed_s": 32.4,
+      "first_s": 0.0,
+      "fps_effective": 30.0,
+      "fps_effective_method": "(pts) (N-1) / (t_last - t_first)",
+      "frame_count": 972,
+      "gap_threshold_s": 0.04999999999999982,
+      "gaps": 0,
+      "interval_stats_s": {
+        "comparable_pairs": 971.0,
+        "max": 0.033333333333338544,
+        "mean": 0.03333333333333333,
+        "median": 0.033333333333333215,
+        "min": 0.03333333333333144,
+        "p05": 0.03333333333333144,
+        "p95": 0.03333333333333499,
+        "std": 1.3148964908568047e-15
+      },
+      "last_s": 32.36666666666667,
+      "monotonic_increasing": true,
+      "pts_missing": 0,
+      "pts_observed": 972,
+      "regressions": 0,
+      "source": "pts",
+      "unit": "s"
+    },
+    "video_id": "moringa_sin_ai"
+  }
+}

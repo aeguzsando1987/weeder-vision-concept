@@ -1,0 +1,22 @@
+# Mecanismo del banco A3/E3: brazo oscilante de un pivote (1R).
+# Valores SINTETICOS de la orden A3/E3 §7; no son hardware medido.
+# Convencion: q en rad desde +X de V, antihorario; p_B^V = a + L(cos q, sin q); theta_B^V = q + beta.
+schema_version: 1
+provenance: synthetic
+
+mechanism:
+  model: single_pivot_swing
+  model_id: single_pivot_swing_bench
+  version: 1
+  domain: ground_metric_synthetic
+  pivot_m: [0.0, 0.0]        # pivote a en V
+  length_m: 0.4              # L > 0; L = 0 es configuracion invalida
+  beta_rad: 0.0              # offset angular de la cuchilla
+  arm_width_m: 0.02          # brazo como cuerpo de espesor finito, de a a B
+  joint:
+    name: swing
+    lower_rad: -1.2          # topes fisicos
+    upper_rad: 1.2
+    velocity_limit_rad_s: 1.0
+    acceleration_limit_rad_s2: 3.0
+  tool_id: blade_rect_200x80 # herramienta de configs/tool.yaml montada en B

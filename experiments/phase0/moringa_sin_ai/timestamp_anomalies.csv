@@ -1,0 +1,2 @@
+kind,frame_index,after_index,before_index,interval_s,at_s,mean_abs_diff,threshold
+content_repeat_candidate,unknown,1,2,unknown,0.06666666666666667,0.36954474449157715,1.6818626403808594

@@ -1,0 +1,37 @@
+# Limites cinematicos y latencias (E1).
+# Valores SUPUESTOS para que exista al menos un caso factible; no son mediciones.
+schema_version: 1
+provenance: assumed
+
+kinematics:
+  frame: V                     # limites relativos al vehiculo
+  orientation_enabled: false   # orientacion variable es una extension con sus propios tests
+
+  position_limits_m:
+    x_min: -0.35
+    x_max: 0.35
+    y_min: -0.20
+    y_max: 0.20
+
+  velocity_limits_mps:
+    x: 0.60
+    y: 0.40
+
+  acceleration_limits_mps2:
+    x: 3.0
+    y: 2.0
+
+  latencies:
+    acquisition_s: 0.03
+    inference_s: 0.05
+    planning_s: 0.02
+    communication_s: 0.01
+    mechanical_response_s: 0.08
+
+  horizon_s: 2.0
+
+  start_state:
+    x_m: 0.0
+    y_m: 0.0
+    contact: false
+    parked: true

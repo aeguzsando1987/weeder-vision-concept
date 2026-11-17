@@ -1,0 +1,9 @@
+# Caso adverso: clave desconocida. Debe ser error, nunca ignorarse (§7).
+schema_version: 1
+mode: synthetic
+scene:
+  scene_id: unknown_key
+  corridor:
+    width_m: 1.0
+    length_m: 5.0
+    anchura_m: 1.0        # <- clave desconocida

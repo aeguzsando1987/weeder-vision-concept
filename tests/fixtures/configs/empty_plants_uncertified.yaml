@@ -1,0 +1,10 @@
+# Caso adverso: corredor sin plantas que NO se declara certificado como libre.
+# Ausencia de detecciones no prueba ausencia de cultivo (§3.2).
+schema_version: 1
+mode: synthetic
+scene:
+  scene_id: empty_plants_uncertified
+  free_space_certified: false
+  plants:
+    positions_y_m: []
+    offsets_x_m: []

@@ -1,0 +1,30 @@
+event_id,plant_id,frame_index,timestamp_s,timestamp_method,base_visibility,observed_target,u_px,v_px,uncertainty_px,confidence,ambiguity_cause,source,notes
+E001,P01,394,13.133333,pts,hidden,none,unknown,unknown,unknown,low,ramas visibles pero centro de convergencia ambiguo,manual_visual,linea izquierda
+E002,P01,400,13.333333,pts,partial,stem_axis_proxy,582.0,725.0,12.0,medium,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea izquierda
+E003,P01,406,13.533333,pts,partial,stem_axis_proxy,588.0,555.0,12.0,medium,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea izquierda
+E004,P01,412,13.733333,pts,partial,stem_axis_proxy,590.0,385.0,15.0,low,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea izquierda
+E005,P01,418,13.933333,pts,hidden,none,unknown,unknown,unknown,low,convergencia no distinguible,manual_visual,linea izquierda
+E006,P02,347,11.566667,pts,partial,stem_axis_proxy,1427.0,708.0,15.0,low,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea derecha
+E007,P02,353,11.766667,pts,partial,stem_axis_proxy,1418.0,524.0,12.0,medium,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea derecha
+E008,P02,359,11.966667,pts,partial,stem_axis_proxy,1415.0,345.0,20.0,low,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea derecha
+E009,P02,365,12.166667,pts,hidden,none,unknown,unknown,unknown,low,convergencia no distinguible,manual_visual,linea derecha
+E010,P03,877,29.233333,pts,partial,stem_axis_proxy,603.0,759.0,20.0,low,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea izquierda
+E011,P03,883,29.433333,pts,partial,stem_axis_proxy,610.0,577.0,12.0,medium,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea izquierda
+E012,P03,889,29.633333,pts,partial,stem_axis_proxy,618.0,404.0,15.0,low,se ve desde arriba el punto de convergencia de ramas (eje del tallo); el contacto con el suelo queda oculto bajo la copa,manual_visual,linea izquierda
+E013,P03,895,29.833333,pts,hidden,none,unknown,unknown,unknown,low,convergencia no distinguible,manual_visual,linea izquierda
+E014,P04,388,12.933333,pts,hidden,none,unknown,unknown,unknown,medium,copa cubre el contacto tallo-suelo; no se distingue tallo,manual_visual,plantula linea izquierda copa ~60 px
+E015,P04,394,13.133333,pts,hidden,none,unknown,unknown,unknown,medium,copa cubre el contacto tallo-suelo; no se distingue tallo,manual_visual,plantula linea izquierda
+E016,P04,400,13.333333,pts,hidden,none,unknown,unknown,unknown,medium,copa cubre el contacto tallo-suelo; no se distingue tallo,manual_visual,plantula linea izquierda
+E017,P05,388,12.933333,pts,hidden,none,unknown,unknown,unknown,medium,copa cubre el contacto tallo-suelo; no se distingue tallo,manual_visual,plantula linea derecha
+E018,P05,394,13.133333,pts,hidden,none,unknown,unknown,unknown,medium,copa cubre el contacto tallo-suelo; no se distingue tallo,manual_visual,plantula linea derecha
+E019,P06,779,25.966667,pts,hidden,none,unknown,unknown,unknown,high,copa densa y grande cubre base y manguera,manual_visual,planta grande linea derecha
+E020,P06,785,26.166667,pts,hidden,none,unknown,unknown,unknown,high,copa densa y grande cubre base y manguera,manual_visual,planta grande linea derecha
+E021,P06,791,26.366667,pts,hidden,none,unknown,unknown,unknown,high,copa densa y grande cubre base y manguera,manual_visual,planta grande linea derecha
+E022,P07,388,12.933333,pts,hidden,none,unknown,unknown,unknown,medium,plantula ~35 px; compresion impide resolver tallo,manual_visual,linea izquierda
+E023,P07,394,13.133333,pts,hidden,none,unknown,unknown,unknown,medium,plantula ~35 px; compresion impide resolver tallo,manual_visual,linea izquierda
+E024,P07,400,13.333333,pts,hidden,none,unknown,unknown,unknown,medium,plantula ~35 px; compresion impide resolver tallo,manual_visual,linea izquierda
+E025,P08,406,13.533333,pts,hidden,none,unknown,unknown,unknown,medium,plantula ~35 px; compresion impide resolver tallo,manual_visual,linea izquierda
+E026,P08,412,13.733333,pts,hidden,none,unknown,unknown,unknown,medium,plantula ~35 px; compresion impide resolver tallo,manual_visual,linea izquierda
+E027,P09,687,22.900000,pts,hidden,none,unknown,unknown,unknown,high,copa densa,manual_visual,linea izquierda
+E028,P10,706,23.533333,pts,hidden,none,unknown,unknown,unknown,high,copa densa,manual_visual,linea izquierda
+E029,P11,931,31.033333,pts,hidden,none,unknown,unknown,unknown,high,copa densa,manual_visual,linea izquierda

@@ -1,0 +1,34 @@
+# Perfil sintetico M0-P para el fixture cfr_640 (640x480, CFR). Escala SUPUESTA del fixture.
+schema_version: 1
+profile_id: fixture_cfr_640_right
+description: "Fixture sintetico 640x480 CFR, surco derecho."
+provider:
+  kind: replay
+  export: experiments/m0_exploratory/cache/fixture_cfr_640.json   # se genera en las pruebas
+  min_confidence: 0.25
+projection:
+  scale_m_per_px: 0.003
+  scale_rationale: "supuesto del fixture: 1.92 m de ancho visible"
+  forward_image_direction: down
+motion:
+  analysis_scale: 1.0
+  roi: {u_min: 0.0, u_max: 1.0, v_min: 0.06, v_max: 1.0, rationale: "excluye la banda de codigo del fixture"}
+  min_inliers: 15
+  max_mad_px: 3.0
+row:
+  name: derecho
+  u_min_norm: 0.60
+  u_max_norm: 0.95
+  axis_u_norm: 0.775
+  rationale: "hilera derecha del fixture (u=0.775)"
+uncertainty:
+  rationale: "fixture: mascaras exactas; cotas pequenas declaradas para ejercitar el margen"
+  policy:
+    localization_bound_m: 0.01
+    calibration_bound_m: 0.01
+    tracking_bound_m: 0.01
+    bound_budget_m: 0.03
+    sigma_multiplier_k: 3.0
+    inflate: exclusions
+configs:
+  planner: experiments/m0_exploratory/profiles/planner_m0.yaml   # level_padding_m 0.01 (gaps)

@@ -1,0 +1,12 @@
+# Validador independiente de barrido (orden A1/E2 §4.3). El despeje exigido
+# (clearance_epsilon_m) y el presupuesto de error de envolvente
+# (geometric_approximation_tolerance_m) se leen de configs/safety.yaml: no se duplican.
+schema_version: 1
+provenance: assumed
+
+validation:
+  max_subdivision_depth: 16      # profundidad maxima de biseccion por tramo
+  max_intervals: 400000          # presupuesto total; agotarlo => UNCERTIFIED
+  continuity_tolerance: 1.0e-8   # |salto| en p, dp/ds, d2p/ds2 en uniones (E2-04)
+  endpoint_tolerance_m: 1.0e-9   # extremos frente a inicio/meta pedidos
+  coverage_method: chord_hull_union

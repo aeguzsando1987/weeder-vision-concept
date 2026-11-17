@@ -1,0 +1,210 @@
+# Evaluacion manual E0 del clip moringa_sin_ai (observacion visual, no detector).
+# Pixeles del cuadro decodificado 1920x1080: u derecha, v abajo; sin rotacion.
+# Version 2 (migracion tras dictamen E0 rev. 1, E0-R2): vincula la evaluacion al
+# contenido del clip y a su tabla por SHA-256; la tabla declara observed_target.
+schema_version: 2
+video_id: moringa_sin_ai
+video_sha256: 63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083
+stem_observations_sha256: f3a9fe64b1a0734d4cca321de8ee310e922a27be8adaa3ba81632e04ced95e3d
+assessor: desarrollador, inspeccion visual el 2026-10-24
+method: >-
+  Hojas con rejilla en pixeles originales (cada 100 px), recortes a resolucion completa
+  con rejilla de 20 px y ampliaciones x2-x4 con rejilla de 10 px de las muestras y de
+  cuadros seleccionados a lo largo del recorrido de cada planta (pasos de 6 cuadros).
+  Posiciones leidas a ojo sobre la rejilla; incertidumbre declarada por observacion.
+  Evidencia reproducible: scripts/render_stem_observations.py.
+session_id: null        # no documentada: no se inventa
+site_id: null           # no documentado: no se inventa
+
+stem_base_visibility: mostly_occluded
+stem_observations_ref: experiments/phase0/moringa_sin_ai/stem_observations.csv
+
+crossing_line:
+  v_px: 540.0
+  u_min_px: 0.0
+  u_max_px: 1920.0
+  crossing_direction: up
+  rationale: >-
+    Linea horizontal en la fila central del cuadro decodificado. El suelo se desplaza
+    hacia arriba en imagen, de modo que cada planta la cruza una vez en sentido 'up'.
+    Es una linea virtual offline en pixeles: no representa la posicion de la cuchilla.
+
+apparent_motion_manual: up
+
+# Contraste manual: marcas blancas de cinta sobre las mangueras de goteo (apoyadas en
+# el suelo) seguidas a ojo; la referencia automatica es el flujo LK del paquete en una
+# ventana de +-140 px alrededor de la trayectoria manual, promediado sobre los mismos
+# pares de cuadros (no la mediana global, que varia con la posicion en imagen).
+flow_manual_checks:
+  - check_id: c1_hose_right_150
+    feature: marca blanca en manguera derecha (contorno poco nitido)
+    frame_from: 150
+    frame_to: 156
+    uv_from_px: [1278.75, 555.0]
+    uv_to_px: [1275.0, 386.0]
+    uncertainty_px: 5.0
+    automated_median_du_px: -1.091
+    automated_median_dv_px: -27.659
+    notes: centro de la marca menos definido que en c2/c3
+  - check_id: c2_hose_right_388
+    feature: marca blanca en manguera derecha
+    frame_from: 388
+    frame_to: 400
+    uv_from_px: [1318.75, 590.0]
+    uv_to_px: [1303.75, 258.75]
+    uncertainty_px: 3.0
+    automated_median_du_px: -1.209
+    automated_median_dv_px: -26.746
+    notes: >-
+      Direccion coincide; la magnitud manual supera a la automatica en 0.85 px/cuadro,
+      fuera de la tolerancia declarada antes de comparar (+-0.5 px/cuadro).
+  - check_id: c3_hose_left_850
+    feature: marca blanca en manguera izquierda
+    frame_from: 850
+    frame_to: 856
+    uv_from_px: [656.75, 232.25]
+    uv_to_px: [676.75, 68.75]
+    uncertainty_px: 3.0
+    automated_median_du_px: 2.903
+    automated_median_dv_px: -26.288
+    notes: direccion y magnitud coinciden dentro de la tolerancia declarada
+
+mounting:
+  camera_rigid_to_vehicle:
+    status: unknown
+    value: null
+    source: >-
+      Sin ficha de montaje. El flujo casi constante en el tiempo es compatible con una
+      camara solidaria, pero no lo demuestra.
+  orientation:
+    status: unknown
+    value: null
+    source: >-
+      El suelo se mueve hacia arriba en imagen. Eso es compatible con una camara cuya
+      parte superior mira hacia atras con avance hacia delante, o con otras
+      combinaciones (por ejemplo, marcha atras). El gradiente del flujo no fija la
+      orientacion ni demuestra por si solo que el eje optico no sea cenital: tambien
+      lo produce un giro entre cuadros.
+  height:
+    status: unknown
+    value: null
+    source: Los 0.5 m del plan son una hipotesis; el video no aporta referencia de altura.
+  position_relative_to_tool:
+    status: unknown
+    value: null
+    source: No hay herramienta visible ni documentacion de la posicion camara-cuchilla.
+  tool_visible_in_frame: false
+
+observation_timing: unknown
+replay_suitability: B
+anticipation_validation: not_possible
+anticipation_reason: >-
+  Herramienta no visible y posicion camara-herramienta desconocida. Ver plantas entrar
+  por el borde inferior no demuestra que se observen antes de la intervencion. Con este
+  material solo cabe replay offline con linea virtual en pixeles.
+
+scale:
+  status: unknown
+  evidence_ref: null
+  candidates_examined:
+    - "manguera de goteo: diametro nominal no documentado (16 mm seria un supuesto)"
+    - "marcas blancas de cinta en la manguera: longitud desconocida"
+    - "anillos blancos alrededor de las plantas: tamano irregular y no documentado"
+    - "huellas de neumatico: paso del dibujo desconocido"
+    - "espaciamiento entre plantas y tamano de hojas: excluidos por la orden (no verifican escala)"
+  notes: >-
+    No hay ninguna referencia metrica independiente visible ni documentada. Las
+    coordenadas quedan en pixeles y no se informa ninguna precision en cm.
+
+homography:
+  feasibility: possible_with_additional_data
+  planar_ground_in_roi: plausible
+  notes: >-
+    El campo de flujo del suelo es suave y se ajusta bien a un modelo afin en las 6
+    muestras de vectores (characterization.json, flow_examples[].affine_fit). Muestra
+    gradientes estables: el suelo se desplaza mas en la parte inferior del cuadro
+    (aprox. -0.006 px/px en v) y en el lado derecho. Por tanto el flujo no es una
+    traslacion uniforme. Ese ajuste es compatible con varios modelos (perspectiva,
+    inclinacion, o giro entre cuadros con escala uniforme, cuyo flujo (R - I) x + b
+    tambien tiene gradientes): no determina inclinacion ni calibracion y no descarta
+    una escala uniforme. Lo que se afirma es que no se ha identificado ni validado
+    ninguna conversion metrica. Es compatible con suelo aproximadamente plano en la
+    ROI; surcos, terrones y huellas de neumatico introducen relieve local. Una homografia exigiria al menos 4 puntos de control con
+    coordenadas metricas independientes en el suelo, intrinsecos/distorsion y una pose
+    estable. Estimar una homografia con medidas supuestas seria solo una estimacion
+    asumida; la validacion pertenece a E4.
+
+conditions:
+  - condition: shadow_sun
+    observed: "yes"
+    frames: [0, 388, 779, 883]
+    notes: Sol pleno durante todo el clip; sombras cortas y estables de las plantas; sin sombras moviles de nubes.
+  - condition: blur
+    observed: "no"
+    frames: [280, 584]
+    notes: >-
+      Las muestras de menor nitidez no muestran desenfoque de movimiento visible.
+      La compresion H.264 (~10.8 Mb/s) limita el detalle fino de tallos de ~1-3 px.
+  - condition: occlusion
+    observed: "yes"
+    frames: [388, 394, 400, 687, 706, 779, 785, 791, 931]
+    notes: >-
+      La copa ocluye el contacto tallo-suelo en las 11 plantas inspeccionadas
+      (P01-P11, en los cuadros de la tabla); no se afirma para el resto del clip.
+  - condition: vibration
+    observed: inconclusive
+    frames: []
+    notes: >-
+      Irregularidad de alta frecuencia en el flujo: jitter du 1.51 px, dv 0.96 px por
+      par (desviacion respecto de la mediana movil). No se puede separar vibracion de
+      correcciones de direccion.
+  - condition: dense_weeds
+    observed: "no"
+    frames: [779, 931]
+    notes: >-
+      No se observan manchas densas de maleza; suelo mayormente desnudo con restos
+      secos. La fraccion verde (ExG) no supera 0.055.
+  - condition: illumination_change
+    observed: "no"
+    frames: [31, 721]
+    notes: Brillo medio 101-115 (escala 0-255); salto maximo entre cuadros 1.37.
+  - condition: plant_entry_exit
+    observed: "yes"
+    frames: [347, 353, 359, 400, 406, 412]
+    notes: >-
+      Las plantas entran por el borde inferior y salen por el superior; transito de
+      ~40 cuadros (~1.4 s) a ~26 px/cuadro.
+
+intervals:
+  - start_frame: 0
+    end_frame: 9
+    suitability: B
+    reason: >-
+      Inicio del surco con una planta parcialmente visible en el borde inferior
+      izquierdo del cuadro 0. Útil para análisis exploratorio del flujo aparente; no
+      se ha acreditado en este intervalo una referencia de base de tallo ni
+      seguimiento completo de esa planta. (Texto de la adenda editorial E0 del
+      25-10-2026. Antes figuraba como C: cambio de interpretacion, no de medicion.)
+  - start_frame: 10
+    end_frame: 971
+    suitability: B
+    reason: >-
+      Plantas en una o dos lineas, identificables y seguibles como objetos (copa)
+      durante ~40 cuadros. El contacto tallo-suelo esta ocluido en las plantas
+      inspeccionadas. Solo en algunas plantas medianas se localiza un proxy: el eje
+      del tallo visto desde arriba, a altura desconocida (stem_axis_proxy, confianza
+      baja/media), que no es base en el suelo.
+
+suitability: B
+suitability_reason: >-
+  Apto para experimentos limitados:
+  (1) flujo aparente de suelo en pixeles (hacia arriba, ~-25.6 px/cuadro; contraste
+  manual en 3 intervalos);
+  (2) seguimiento de plantas como objetos (copas) y replay offline con linea virtual
+  v=540 px (linea en pixeles: no representa cuchilla ni instante de intervencion);
+  (3) anotacion de proxies: 3 plantas (P01-P03) con el eje del tallo visto desde
+  arriba (stem_axis_proxy, altura desconocida) localizado en 3 cuadros cada una
+  (+-12-20 px) y cruce interpolado de la linea virtual, con intervalo de soporte.
+  No es A porque el contacto tallo-suelo no es identificable en ninguna de las 11
+  plantas inspeccionadas: puerta de datos PENDING_BASE_VISIBILITY. Escala, montaje y
+  anticipacion siguen unknown; son restricciones independientes de esa puerta.

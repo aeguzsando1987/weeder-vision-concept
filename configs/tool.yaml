@@ -1,0 +1,15 @@
+# Geometria de la cuchilla virtual (E1).
+# Dimensiones SINTETICAS: no constituyen diseno mecanico ni dimension medida.
+schema_version: 1
+provenance: synthetic
+
+tool:
+  tool_id: blade_rect_200x80
+  domain: ground_metric_synthetic
+  shape: rectangle
+  length_x_m: 0.20          # lado largo sobre x_B (lateral)
+  width_y_m: 0.08           # lado corto sobre y_B (longitudinal)
+  pivot_offset_m: [0.0, 0.0]  # desplazamiento del rectangulo respecto al pivote; origen de B = pivote
+  orientation_mode: fixed   # H1 usa orientacion fija (§3.3)
+  cutting_inset_m: 0.005    # la huella activa de corte es menor que la de colision
+  depth_z_m: null           # interfaz Z reservada; debe ser null en H1

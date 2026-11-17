@@ -1,0 +1,36 @@
+# Escena sintetica reproducible (E1).
+# Todos los valores son SINTETICOS: no son mediciones ni recomendaciones de
+# dimensiones reales. Registro: docs/assumptions.md.
+schema_version: 1
+mode: synthetic            # synthetic | exploratory | calibrated
+provenance: synthetic
+
+scene:
+  scene_id: nominal_three_plants
+  description: "Escena nominal sintetica: 3 plantas centradas y corredor de 1 x 5 m."
+  domain: ground_metric_synthetic   # metrico por construccion, NO verificado
+  frame: W                          # suelo: x lateral derecha, y hacia delante
+  seed: 20261024
+  jitter_x_m: 0.0
+  jitter_y_m: 0.0
+  free_space_certified: false        # una lista vacia de plantas no certifica suelo libre
+
+  corridor:
+    width_m: 1.0
+    length_m: 5.0
+    center_x_m: 0.0
+    start_y_m: 0.0
+
+  plants:
+    positions_y_m: [1.0, 2.0, 3.0]
+    offsets_x_m: [0.0, 0.0, 0.0]
+    stem_radius_m: 0.02
+
+  exclusion:
+    protection_radius_m: 0.15       # proteccion agronomica nominal P_i
+    uncertainty_margin_m: 0.03      # cota conservadora m_i; E_i = P_i (+) D(m_i)
+    polygon_segments: 64            # aproximacion poligonal EXTERIOR del circulo
+
+  advance:
+    speed_mps: 0.20                 # entrada del escenario, no variable libre
+    heading_rad: 0.0

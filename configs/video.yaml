@@ -1,0 +1,49 @@
+# Caracterizacion exploratoria de video (E0). Todo en pixeles de imagen: sin escala.
+# Ejes de imagen: u hacia la derecha, v hacia abajo; no se aplica rotacion de visualizacion.
+schema_version: 1
+mode: exploratory
+provenance: assumed
+
+video:
+  source: resources/moringa_sin_ai.mp4
+  # Hash verificado por el Director Técnico (orden E0); un original distinto aborta.
+  expected_sha256: 63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083
+  output_dir: experiments/phase0
+  manifest_path: data/video_manifest.csv
+
+  timestamps:
+    preferred_source: pts           # PTS * time_base; nunca indice/FPS presentado como PTS
+    allow_index_fps_estimate: true  # solo si faltan PTS; se etiqueta index_fps_estimate
+    gap_factor: 1.5                 # intervalo > 1.5 x mediana => salto registrado
+    annotation_tolerance_s: 1.0e-6  # |t anotado - t del cuadro|; cubre 6 decimales del CSV
+
+  roi:                              # normalizada [0,1]; se aplica al flujo optico
+    u_min: 0.0
+    u_max: 1.0
+    v_min: 0.0
+    v_max: 0.97
+    rationale: >-
+      Suelo en todo el encuadre; se excluye el 3 % inferior porque en algunos cuadros
+      aparece en el borde una franja oscura de pocos pixeles (u~900-1030) no identificada
+      que podria ser sombra o parte del vehiculo y sesgaria el flujo hacia cero.
+
+  sampling:
+    uniform_count: 12               # minimo exigido por la orden §3
+    problem_count_per_metric: 2
+    min_separation_frames: 15
+    analysis_scale: 0.25            # metricas y flujo sobre 480x270
+    jpeg_quality: 92
+
+  flow:
+    method: lk_pyramidal_fb
+    frame_step: 1
+    max_corners: 400
+    quality_level: 0.01
+    min_distance_px: 7.0            # pixeles de analisis
+    window_px: 21
+    pyramid_levels: 3
+    fb_max_error_px: 1.0            # error ida/vuelta maximo, pixeles de analisis
+    min_valid_points: 20
+    direction_dominance: 0.7
+    min_motion_px: 0.5              # pixeles de analisis (2 px del original)
+    example_count: 6

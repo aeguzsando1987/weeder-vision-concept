@@ -1,0 +1,7 @@
+# Caso adverso: se solicita modo calibrado sin calibracion verificada.
+# Debe fallar de forma explicita, no degradar a dominio supuesto (§7).
+schema_version: 1
+mode: calibrated
+scene:
+  scene_id: calibrated_without_calibration
+  domain: ground_metric_verified

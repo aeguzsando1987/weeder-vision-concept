@@ -1,0 +1,8 @@
+# Caso adverso: valor no finito en una dimension.
+schema_version: 1
+mode: synthetic
+scene:
+  scene_id: non_finite
+  corridor:
+    width_m: .nan
+    length_m: 5.0

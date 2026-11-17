@@ -1,0 +1,24 @@
+# Tolerancias de software e incertidumbre (E1).
+# Las tolerancias numericas NO son margenes agronomicos (§6).
+schema_version: 1
+provenance: assumed
+
+safety:
+  clearance_epsilon_m: 1.0e-4                  # contacto y tangencia se rechazan
+  geometric_approximation_tolerance_m: 1.0e-5  # presupuesto de error por discretizacion
+  limit_comparison_tolerance: 1.0e-8           # comparacion numerica de limites
+  # Exceso radial CONSERVADOR maximo de los poligonos circunscritos de exclusion
+  # (r*(sec(pi/n)-1)). No es subproteccion ni consume el presupuesto anterior, que
+  # gobierna errores que podrian subestimar una geometria (R12).
+  max_conservative_discretization_excess_m: 5.0e-4
+  require_known_domain: true                   # no se trabaja sobre suelo desconocido
+
+  uncertainty:
+    localization_bound_m: 0.01
+    calibration_bound_m: 0.01
+    tracking_bound_m: 0.01
+    bound_budget_m: 0.03        # suma de cotas = 0.03 m = margen de exclusion
+    sigma_multiplier_k: 3.0     # cota declarada k*sqrt(lambda_max(Sigma)); modelo, no garantia
+    inflate: exclusions         # la incertidumbre infla exclusiones O herramienta, nunca ambas
+                                # exclusions: scene.exclusion.uncertainty_margin_m >= suma de cotas
+                                # tool: margen de exclusion = 0 y la herramienta se infla con la suma

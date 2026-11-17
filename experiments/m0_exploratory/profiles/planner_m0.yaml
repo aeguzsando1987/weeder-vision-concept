@@ -1,0 +1,44 @@
+# Planner E2 para M0-P: copia de configs/planner.yaml con UN cambio de parametro de busqueda.
+# level_padding_m 0.05 -> 0.01: la ruta intrafilar pasa por los gaps entre plantas
+# (directriz del usuario 26-10-2026). Con 0.05 los niveles de E2 no caben en gaps cuya
+# holgura longitudinal para la huella es < ~0.12 m, y E2 no puede entrar y salir de un
+# gap en el mismo tramo. Es un parametro del generador de candidatos: el validador no
+# lo usa; margenes de proteccion, incertidumbre, herramienta y corredor no cambian.
+# Planificador geometrico E2 (orden A1/E2 §4.2, §5). Salida: TaskPath en W (metros).
+# Ningun parametro depende de un clip, escena o resolucion concreta.
+schema_version: 1
+provenance: assumed
+
+planner:
+  strategy: longitudinal_levels      # niveles longitudinales + candidatos laterales (§3.4)
+  smoothing: quintic_lane_change     # cambios laterales quinticos, C2 en s global
+  generation_margin_m: 0.01          # holgura SOLO para proponer; el validador no la usa
+  level_padding_m: 0.01              # M0-P: ver cabecera (producto: 0.05)
+  lateral_candidates_per_interval: 3 # posiciones laterales por intervalo libre en cada nivel
+  max_candidates: 8                  # candidatos ordenados que se intentan suavizar y validar
+  max_graph_edges: 200000            # presupuesto determinista de la busqueda
+  seed: 0                            # el algoritmo no usa aleatoriedad; se registra
+  weights:                           # costo = suma ponderada de terminos adimensionales
+    length: 1.0
+    deviation: 1.0
+    smoothness: 0.25
+  normalizers:
+    deviation_m: 0.25                # area lateral media / 0.25 m
+    smoothness_rad2: 1.0             # suma de cambios de rumbo al cuadrado / 1 rad^2
+
+demo:                                # perfil de demo: extremos del origen B, no de la escena
+  scene: nominal_three_plants
+  start_xy_m: [0.0, 0.10]
+  goal_xy_m: [0.0, 4.90]
+  theta_rad: 0.0
+
+random_scenarios:                    # generador congelado de E2-08 (semillas 0..99)
+  seed_start: 0
+  count: 100
+  corridor_width_m: [0.8, 1.4]
+  corridor_length_m: 5.0
+  plant_count: [0, 6]
+  plant_y_margin_m: 0.6
+  plant_offset_fraction: 0.35
+  start_y_m: 0.10
+  goal_margin_m: 0.10

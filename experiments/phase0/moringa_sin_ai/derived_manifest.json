@@ -1,0 +1,238 @@
+{
+  "experiments/phase0/moringa_sin_ai/characterization.json": {
+    "sha256": "c1f5dc0be5b61710dd1479ad23f9e984f5003646e83883ce78234f737cbd7fee",
+    "size_bytes": 28142
+  },
+  "experiments/phase0/moringa_sin_ai/contact_sheet.jpg": {
+    "sha256": "5f3633f08c9a0fa310be699f9bdfbf94a7ba746b5406b1fb7b2f36a02b343073",
+    "size_bytes": 887205
+  },
+  "experiments/phase0/moringa_sin_ai/crossing_events.csv": {
+    "sha256": "bad3ba62f13b48519271d6d8066e3415408b24f9a1a55022070d112510609b80",
+    "size_bytes": 405
+  },
+  "experiments/phase0/moringa_sin_ai/flow.csv": {
+    "sha256": "ef58d3a988dace5d592f76c9f1e3b79160cde06bb6510795f8f8ca2fac35d46b",
+    "size_bytes": 209758
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000000_000001.csv": {
+    "sha256": "183c68ef979f6e4089eeab562168b82f0e889ad30060d31000f77e8a398b0704",
+    "size_bytes": 31738
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000000_000001.jpg": {
+    "sha256": "fc692fa09c2731e2b6ec61a9a6aef42cb46bd363c2dc9e3db185d465e36d9399",
+    "size_bytes": 763632
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000194_000195.csv": {
+    "sha256": "ba7bd2b9fc27b31b1b83672e2a428437d4e42ea4c7aad3579e4984a065c52239",
+    "size_bytes": 31945
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000194_000195.jpg": {
+    "sha256": "68af7f57bfc4ffc6434d2e8f9004aaed635f17759341fcc4f360f5741b60bbe7",
+    "size_bytes": 707118
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000388_000389.csv": {
+    "sha256": "b0ab353cd26594271b4c1ba4d67573364b6cbe62ae57a836ee47681c2c5f0b5a",
+    "size_bytes": 31810
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000388_000389.jpg": {
+    "sha256": "f22d6f9de9b97fc57d971870a53928e0d220e25c519708943afcc6ad13247d6e",
+    "size_bytes": 712795
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000582_000583.csv": {
+    "sha256": "e6264515dbb01057ecd6cf91a025af1c0cdd1563368a1869bbb1e27a54509caf",
+    "size_bytes": 31824
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000582_000583.jpg": {
+    "sha256": "8aeaaf2ddc5f04dd80b14cbe40514d022256d8fd406dc9df5c65342816eb6b0f",
+    "size_bytes": 662858
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000776_000777.csv": {
+    "sha256": "ff40756b69ee5d4ad483493487cd994fc1fcaf1559b7fe93af419011b8d13e35",
+    "size_bytes": 31890
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000776_000777.jpg": {
+    "sha256": "63b0b2cca10456b72091443f70050163d698853c1d55a0b50ed1c0fc9f30958f",
+    "size_bytes": 704211
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000970_000971.csv": {
+    "sha256": "b4a7e9d42af67ec0c67b1fae34cd2451fd74ace1875e6abcfea9dd13ab93b803",
+    "size_bytes": 31809
+  },
+  "experiments/phase0/moringa_sin_ai/flow_examples/flow_000970_000971.jpg": {
+    "sha256": "f5ac5242603bc4e52fb28c099be2c07a02a3560c2a85663bb717a7e91cb5355a",
+    "size_bytes": 698597
+  },
+  "experiments/phase0/moringa_sin_ai/flow_timeseries.png": {
+    "sha256": "5c3f0d178b56667245e8d93360eaa262ea934eade6c25add5f488574e3b6c784",
+    "size_bytes": 152549
+  },
+  "experiments/phase0/moringa_sin_ai/frame_metrics.csv": {
+    "sha256": "af1985c668879b2d581e1181ba7d15ad150588c4f78ad390469874590535a773",
+    "size_bytes": 152245
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000000.jpg": {
+    "sha256": "6c74cfb0f8f662f402b80511a1012e91bb25af0b67c2d4f6ec246acb1dec8901",
+    "size_bytes": 639376
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000031.jpg": {
+    "sha256": "ae93b8ca028c3d8bc2017de9204780d00bc51eab56ceecf7c6ffc4ae71274025",
+    "size_bytes": 607810
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000056.jpg": {
+    "sha256": "dfc49e8a6f748b0b48d372f4a7fb8ed78e18286e29cdd63e24edc0f017a6ad90",
+    "size_bytes": 585292
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000088.jpg": {
+    "sha256": "574648f77c396a4052a3b0a94add76724d1fcfa7569ccebca3a4e342aaa76776",
+    "size_bytes": 591276
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000121.jpg": {
+    "sha256": "34b2ac8b443a08ad3d92bedfbda44aa81c8f05f0c37a33aafca7b36214d05a1c",
+    "size_bytes": 601623
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000177.jpg": {
+    "sha256": "89c90b74e5a24303ec746b13fdc93c95d5bc45ee7239c379b2620eda2e262c74",
+    "size_bytes": 599443
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000209.jpg": {
+    "sha256": "26a15cf05610f5c1762bc467d20b073f0ef40057a60be95fb550e8b0045cc2c9",
+    "size_bytes": 594537
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000265.jpg": {
+    "sha256": "a0193b22cde2450a127248985eb8b97d05daaefeb123f3e3f17ef3e2f150197b",
+    "size_bytes": 537222
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000280.jpg": {
+    "sha256": "4e38c7b931d19258ddbd090756053d117388f15af0566cf6ca5dfb2ce7f1c042",
+    "size_bytes": 540856
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000353.jpg": {
+    "sha256": "76aa54f79504782884cde45863ff7cd0efbe8bcfae4cfa9fa3448077b3b8164e",
+    "size_bytes": 585958
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000441.jpg": {
+    "sha256": "a1666fbfd8cd5dd194ce7812a3db38038e1499b410f5da97f540bc1fc5835060",
+    "size_bytes": 585903
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000530.jpg": {
+    "sha256": "e641d23c2da43ff9cc86a092a29d473affdbd111f2452b3fcd8512926c1b5d0f",
+    "size_bytes": 594166
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000584.jpg": {
+    "sha256": "4918c2294e712c6b3d771f9200590e1b9d0af11ea73f8cf6e35b31269094b311",
+    "size_bytes": 538409
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000618.jpg": {
+    "sha256": "1ca8c0f9739a870e525a1cc74e9fa3c2eb8b9e62f6a7aa4bd659eee75b39776c",
+    "size_bytes": 591992
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000687.jpg": {
+    "sha256": "33bd1740c44f7ce1c833f934669ec0c88e2f2ad225a8ea74d5452e108fcf2bf6",
+    "size_bytes": 584323
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000706.jpg": {
+    "sha256": "ed45d83110b1f3b7375a71815e6d4db5ac94640e13debcad4771286d957fc78d",
+    "size_bytes": 582126
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000721.jpg": {
+    "sha256": "a79b68fe9444bba4cc9c7afdee9cca7c0105e9be283a867f17f307cb044ec6da",
+    "size_bytes": 602074
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000779.jpg": {
+    "sha256": "261d374f44413240535fca02ebf95a63fd6f5c9406861ae80c23e0d3fc31735b",
+    "size_bytes": 589381
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000794.jpg": {
+    "sha256": "b8f09ed61771fc9b4b9046014cf3bd6fbf6f2960603fef27cc6e22178b9f8253",
+    "size_bytes": 582246
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000826.jpg": {
+    "sha256": "36e649aa4ce81d753085ef5fe37f477ac84478875448008587e47bcae77ee461",
+    "size_bytes": 592655
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000883.jpg": {
+    "sha256": "7e833809e04c77980db5abb7315013b26449febc9b2c3fdb4528d8cd9e904122",
+    "size_bytes": 579412
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000915.jpg": {
+    "sha256": "2691eea8b5deb526792c36ad592490f07c0850ee1f8fdc3ff647817a890dee4d",
+    "size_bytes": 574395
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000931.jpg": {
+    "sha256": "218f61e03f0da22feaefb1f32df8ac4e5e1abbdc9dc76f338e1804b97cb75884",
+    "size_bytes": 598040
+  },
+  "experiments/phase0/moringa_sin_ai/frames/frame_000971.jpg": {
+    "sha256": "86c9ca27cd9b9d97fdf7c3c4804ce7a9fe2b25a0fc9fd92ec7577ac7e03b3874",
+    "size_bytes": 577302
+  },
+  "experiments/phase0/moringa_sin_ai/manual_assessment.yaml": {
+    "sha256": "6c06168c901b4444f2b753cf43c8bb8129a75ef8d9635d4f97425846342c875b",
+    "size_bytes": 9727
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P01_000400.jpg": {
+    "sha256": "b9852a5228ed8ae8ab5e0c8dcb2cc1c601d3a86d19550e209ef6fb0b36eb8d86",
+    "size_bytes": 185633
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P01_000406.jpg": {
+    "sha256": "9fb1c1a8d2d4da8cc7536e95ec279e1845473bfd076e5aefbdfc79446c92a0de",
+    "size_bytes": 187165
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P01_000412.jpg": {
+    "sha256": "b6e7ba7f53639fc43ba5cd6a46e1b0dc7dca11b7eff317e2cbb47cabdfbdca9e",
+    "size_bytes": 188074
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P02_000347.jpg": {
+    "sha256": "f0e4c1df191bb5297845350efe04f6cbb1c1f8ccd8b3e53d681ab17551e7bfce",
+    "size_bytes": 179830
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P02_000353.jpg": {
+    "sha256": "bb4e1a559ccd155720b81859a1cfc1e99988d9acfb10c2b6faa74e2581c53502",
+    "size_bytes": 181181
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P02_000359.jpg": {
+    "sha256": "113026d36dff02b8865d262d37c61b7036c0cd53177b0fa6cfe4fd4492811c2d",
+    "size_bytes": 180817
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P03_000877.jpg": {
+    "sha256": "05c81b1e2e8b3b17e711690022e425985f4743f08270dbdffd39b4d77e3a0b8c",
+    "size_bytes": 183455
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P03_000883.jpg": {
+    "sha256": "019a57a82effb866db782f83611d89d8546195f96b3a9380845ec210938ab604",
+    "size_bytes": 181480
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/full_P03_000889.jpg": {
+    "sha256": "2eadb7f0016400cfac0e6cae919763a47f883a7780125fd576d7cf1cb8e0ab90",
+    "size_bytes": 180125
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/strip_P01.jpg": {
+    "sha256": "3b8300dd411f7e716ebc44abcecc192809d74d5125f634e1782063b62f798bb8",
+    "size_bytes": 119140
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/strip_P02.jpg": {
+    "sha256": "36c98fa3ea521578614ea301189bd84e0b9a6700b5e91739aaa7a9c226a7b03c",
+    "size_bytes": 123284
+  },
+  "experiments/phase0/moringa_sin_ai/manual_evidence/strip_P03.jpg": {
+    "sha256": "c0c27ec09f39d37d15a6099b247431ee98aeccac66633954240897df675a4542",
+    "size_bytes": 124787
+  },
+  "experiments/phase0/moringa_sin_ai/samples.csv": {
+    "sha256": "d24769096acba3c9eda713e795cfa0802eb2aa073c42aa00d5bf1e4576dc7669",
+    "size_bytes": 2476
+  },
+  "experiments/phase0/moringa_sin_ai/stem_observations.csv": {
+    "sha256": "f3a9fe64b1a0734d4cca321de8ee310e922a27be8adaa3ba81632e04ced95e3d",
+    "size_bytes": 5072
+  },
+  "experiments/phase0/moringa_sin_ai/timestamp_anomalies.csv": {
+    "sha256": "42708d3248d9b27e2055da561285a06c6dcf198b80b89f37abb241d483d71bab",
+    "size_bytes": 186
+  },
+  "experiments/phase0/moringa_sin_ai/timestamps.csv": {
+    "sha256": "a020092283d860290d8ca04f7d5132e13bd47f9a25dacbaf4603a9a0ed69da36",
+    "size_bytes": 93455
+  }
+}

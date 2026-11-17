@@ -1,0 +1,25 @@
+{
+  "backend": {
+    "libavcodec": "63.1.102",
+    "libavdevice": "63.1.102",
+    "libavfilter": "12.1.102",
+    "libavformat": "63.1.102",
+    "libavutil": "61.1.102",
+    "libswresample": "7.1.102",
+    "libswscale": "10.1.102",
+    "opencv": "5.0.0",
+    "pyav": "19.0.2"
+  },
+  "command": [
+    "/home/eric/PROJECTS/TESTS_ALL_KIND/DESMALEZADORA_CONCEPT/.venv/bin/python",
+    "scripts/characterize_videos.py",
+    "--config",
+    "configs/video.yaml",
+    "--input",
+    "resources/moringa_sin_ai.mp4"
+  ],
+  "config_path": "configs/video.yaml",
+  "executed_at_utc": "2026-10-27T00:41:48+00:00",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.12.14"
+}

@@ -1,0 +1,61 @@
+# PERFIL V1 (orden docs/orders/V1_vision_order.md). Difiere del perfil M0-P en supuestos
+# elegidos por el usuario el 16-11-2026 tras el diagnostico de gaps:
+#   - herramienta supuesta 0.10 x 0.04 m (tool_v1.yaml) en lugar de 0.20 x 0.08 m;
+#   - se protege un TALLO SUPUESTO (radio 0.05 m en el centroide de la copa) en lugar de
+#     la copa completa: supone que la herramienta trabaja por debajo de la copa;
+#   - incertidumbre supuesta 0.03 m en lugar de 0.05 m;
+#   - patron de ruta alternante.
+# Ninguno es una medicion; el perfil M0-P original se conserva sin cambios.
+# Perfil M0-P del clip real moringa_sin_ai, surco DERECHO de la imagen (decision del usuario).
+# EXPLORATORIO (ground_assumed): ninguna cifra es una medicion. Ver docs/reviews/M0_P.md.
+schema_version: 1
+profile_id: real_moringa_right_row_v1
+description: "moringa_sin_ai: surco derecho de la imagen, escala y montaje supuestos."
+expected_video_sha256: 63f43e111c3a8031aafcdc738eef32ed47f2e12b877e87fcce0817a226e9e083
+provider:
+  kind: replay
+  export: experiments/m0_exploratory/cache/moringa_sin_ai_yolo.json   # export_yolo_detections.py
+  min_confidence: 0.25
+projection:
+  scale_m_per_px: 0.001
+  scale_rationale: >-
+    SUPUESTO: las dos mangueras de goteo aparecen separadas ~720 px y se asume una
+    separacion de ~0.72 m. No hay referencia metrica documentada (E0, G4).
+  forward_image_direction: down   # el suelo sube en la imagen (E0); supuesto de montaje
+motion:
+  analysis_scale: 0.25
+  roi: {u_min: 0.0, u_max: 1.0, v_min: 0.0, v_max: 0.97, rationale: "ROI de flujo de E0"}
+  min_inliers: 20
+  max_mad_px: 8.0     # el flujo real no es uniforme (E0 §5): tolerancia mayor que en fixtures
+  max_step_px: 120.0
+row:
+  name: derecho
+  u_min_norm: 0.52
+  u_max_norm: 1.0
+  axis_u_norm: 0.74   # linea de plantacion supuesta si faltan plantas (mediana YOLO 0.72-0.76)
+  rationale: >-
+    Hilera derecha de la imagen (plantas en u~0.70-0.80). La banda incluye ambos lados
+    de la hilera para rodear sus plantas; no es el pasillo central.
+planning:
+  pattern: alternating   # V1: rodear cada planta por el costado opuesto al de la anterior
+  pattern_commit_clearance_m: 0.015   # un cruce nuevo se compromete solo con esta holgura
+map:
+  protection: assumed_stem
+  stem_protection_radius_m: 0.05   # SUPUESTO: tallo en el centroide de la copa (ver cabecera V1)
+uncertainty:
+  rationale: >-
+    Cotas SUPUESTAS en metros supuestos (decision del usuario del 16-11-2026): centroide
+    de copa como proxy del tallo (0.01), escala supuesta (0.01) y seguimiento (0.01).
+  policy:
+    localization_bound_m: 0.01
+    calibration_bound_m: 0.01
+    tracking_bound_m: 0.01
+    bound_budget_m: 0.03
+    sigma_multiplier_k: 3.0
+    inflate: exclusions
+configs:
+  planner: experiments/m0_exploratory/profiles/planner_m0.yaml   # level_padding_m 0.01 (gaps)
+  tool: experiments/m0_exploratory/profiles/tool_v1.yaml          # 0.10 x 0.04 m supuesta
+render:
+  footprint_samples: 0     # V1: sin huellas a lo largo de la ruta; se dibuja la herramienta
+  setpoint_overlay: true

@@ -1,0 +1,6 @@
+# Herramienta en dominio verificado, coherente con calibrated_without_calibration.yaml.
+# Aisla la causa del rechazo: solo falta la calibracion (R2).
+schema_version: 1
+provenance: synthetic
+tool:
+  domain: ground_metric_verified
